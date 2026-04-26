@@ -1,0 +1,50 @@
+<!-- create layout for guessing game with heading difficulty selector input and buttons -->
+
+<!-- add sections to display hints attempts and score -->
+
+<!-- include replay button and link css and javascript files -->
+<!DOCTYPE html>
+<html lang="en">        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>🎮 Guessing Game</h1>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+        </div>
+        <div class="difficulty-selector">
+            <label for="difficultySelect">Select Difficulty:</label>
+            <select id="difficultySelect">
+                <option value="easy">Easy (1-10)</option>
+                <option value="medium">Medium (1-50)</option>
+                <option value="hard">Hard (1-100)</option>
+            </select>
+        </div>
+        <div class="input-section">
+            <input type="number" id="guessInput" placeholder="Enter your guess">
+            <button id="submitBtn">Submit Guess</button>
+        </div>
+        <div class="feedback-section">
+            <p id="feedback"></p>
+        </div>
+        <div class="attempts-section">
+            <p id="attemptsLeft"></p>
+        </div>
+        <div class="score-section">
+            <p id="scoreDisplay"></p>
+        </div>
+        <div class="badges-section">
+            <h3>Your Badges</h3>
+            <div id="badgesContainer" class="badges-container"></div>
+        </div>
+        <button id="resetBtn">🔄 Replay</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

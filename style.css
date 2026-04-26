@@ -1,0 +1,524 @@
+/* Guessing Game Styles */
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #cedef6; /* light clean background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.dark {
+    background: #1e272e; /* keep dark mode separate */
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .card {
+    background-color: #2c3e50;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid #007BFF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(1.1);
+}
+
+body.dark .theme-toggle {
+    border-color: #f39c12;
+    color: #f39c12;
+}
+
+body.dark .theme-toggle:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+h1 {
+    color: #333;
+    margin: 0;
+    font-size: 28px;
+}
+
+body.dark h1 {
+    color: #ecf0f1;
+}
+
+/* Button Styles */
+button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 12px 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+body.dark button {
+    background-color: #3498db;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+body.dark button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    animation: bounce 0.3s ease;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+body.dark button:disabled {
+    background-color: #7f8c8d;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: white;
+    color: #333;
+}
+
+body.dark input[type="text"],
+body.dark input[type="email"],
+body.dark input[type="password"],
+body.dark input[type="number"] {
+    background-color: #34495e;
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+body.dark input[type="number"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+input[type="number"]:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+body.dark input[type="number"]:disabled {
+    background-color: #2c3e50;
+    color: #7f8c8d;
+}
+
+/* Select Styles */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+body.dark select {
+    background-color: #34495e;
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+body.dark select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Badges Styles */
+.badges-section {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.badges-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+body.dark .badges-section h3 {
+    color: #ecf0f1;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 60px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+body.dark .badge {
+    background-color: #34495e;
+    border-color: #7f8c8d;
+}
+
+.badge.earned {
+    background-color: #e8f5e8;
+    border-color: #28a745;
+    opacity: 1;
+}
+
+body.dark .badge.earned {
+    background-color: #27ae60;
+    border-color: #2ecc71;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.badge-info {
+    text-align: left;
+}
+
+.badge-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+body.dark .badge-name {
+    color: #ecf0f1;
+}
+
+.badge-description {
+    color: #666;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+body.dark .badge-description {
+    color: #bdc3c7;
+}
+
+/* Badge Notification Styles */
+.badge-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+.badge-notification h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+}
+
+.notification-badge {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.notification-badge .badge-icon {
+    margin-right: 10px;
+}
+
+.notification-badge .badge-name {
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Section Styles */
+.difficulty-selector,
+.input-section,
+.feedback-section,
+.attempts-section,
+.score-section {
+    margin: 20px 0;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-section input {
+    flex: 1;
+}
+
+.input-section button {
+    flex-shrink: 0;
+    width: auto;
+}
+
+p {
+    margin: 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Feedback Styles */
+#feedback {
+    font-weight: bold;
+    color: #28a745;
+    min-height: 30px;
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0fdf4;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+}
+
+body.dark #feedback {
+    color: #2ecc71;
+    background-color: #1e3a2e;
+    border-left-color: #2ecc71;
+}
+
+#feedback.correct {
+    color: #28a745;
+    background-color: #f0fdf4;
+    border-left-color: #28a745;
+    animation: pulse 0.6s ease-in-out;
+}
+
+body.dark #feedback.correct {
+    color: #2ecc71;
+    background-color: #1e3a2e;
+    border-left-color: #2ecc71;
+    animation: pulse 0.6s ease-in-out;
+}
+
+#feedback.wrong {
+    color: #dc3545;
+    background-color: #fdf0f0;
+    border-left-color: #dc3545;
+}
+
+body.dark #feedback.wrong {
+    color: #e74c3c;
+    background-color: #3a1e1e;
+    border-left-color: #e74c3c;
+}
+
+#feedback.game-over {
+    color: #ff6b00;
+    background-color: #fff5e6;
+    border-left-color: #ff6b00;
+    font-size: 16px;
+}
+
+body.dark #feedback.game-over {
+    color: #f39c12;
+    background-color: #3a2e1e;
+    border-left-color: #f39c12;
+}
+
+/* Score Display */
+#attemptsLeft,
+#scoreDisplay {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 12px 0;
+    display: block;
+    width: 100%;
+}
+
+body.dark #attemptsLeft,
+body.dark #scoreDisplay {
+    color: #ecf0f1;
+    background-color: #34495e;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+body.dark label {
+    color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .input-section input,
+    .input-section button {
+        width: 100%;
+    }
+
+    button {
+        padding: 12px;
+        margin: 10px 0;
+    }
+
+    input[type="number"],
+    select {
+        margin: 10px 0;
+    }
+
+    #attemptsLeft,
+    #scoreDisplay {
+        font-size: 14px;
+    }
+}
