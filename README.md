@@ -55,7 +55,7 @@ Multi-Level Guessing Game is an interactive web-based game where users try to gu
 
 
 ## 👨‍💻 Author
-- Aditya Rathi
+- Aditya Mahekar
 - SY (CSE A)
   
 
